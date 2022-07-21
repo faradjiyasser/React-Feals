@@ -1,0 +1,57 @@
+@use "../abstracts/index" as *;
+.certificate{
+    position: relative;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    background: $almond;
+    @include align(flex, center, center, null, 100%);
+    padding: 5rem 0;
+    &__heading{
+        h1{
+            font-size: 4rem;
+            line-height: 5rem;
+            font-weight: 100;
+            text-align: center;
+            @include responsive(medium){
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+            @include responsive(small){
+                font-size: 2.6rem;
+                line-height: 3rem;
+            }
+            @include responsive(xsmall){
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+            }
+        }
+        &__cards{
+            margin-top: 4rem;
+            &__card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        h2{
+            margin: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            line-height: 3rem;
+            color: $black;
+
+        }
+            p{
+                margin-top: 2rem;
+                font-size: 2rem;
+                color: $grey;
+                text-align: center;
+                margin: 0 8rem;
+            }
+        }
+    }
+}
+.certificateIco{
+    color: $lightBlue;
+    opacity: .7;
+}

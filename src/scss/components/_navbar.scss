@@ -1,0 +1,176 @@
+@use "../abstracts/index" as *;
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    //max-width: 1920px; 
+    transition: all .25s linear;
+    z-index: 1000;
+    @include responsive(medium){
+        max-width: 100%;
+    }
+    @include responsive(small){
+        max-width: 100%;
+        
+    }
+    @include responsive(xsmall){
+        max-width: 100%;
+        position: inherit;
+        color: $black;
+    }
+    @include responsive(xxsmall){
+        max-width: 100%;
+    }
+
+    &__elements{
+        @include align(flex, center, space-between, auto, 100%);
+        position: relative;
+        @include responsive(medium){
+            max-width: 100%;
+        }
+        &__logo{
+            @include align(flex, center, center, auto, 100%);
+            width: 12rem;
+            height: 1rem;
+            object-fit: cover;
+            cursor: pointer;
+            object-fit: cover;
+            margin: 3rem 0;
+            margin-left: 1.5rem;
+            img{
+                position: relative;
+                width: 100%; 
+                height: auto;
+            }
+            @include responsive(medium){
+                width: 10rem;
+                height: 2.6rem;
+                margin: 2.6rem 0;
+                margin-left: 1.5rem;
+            }
+            @include responsive(small){
+                width: 8rem;
+                height: 2rem;
+                margin: 2rem 0;
+                margin-left: 1.5rem;
+            }
+            @include responsive(xsmall){
+                width: 6rem;
+                height: 1.6rem;
+                margin: 1rem 0;
+                margin-left: 1.5rem;
+            }
+        }
+        &__body{
+            @include align(flex, center, center, auto, 100%);
+            list-style: none;
+            &__li{
+                font-size: 1.8rem;
+                margin: 0rem 1rem;
+                line-height: 2rem;
+                cursor: pointer;
+                text-transform: capitalize;
+                color: $white;
+                @include responsive(medium){
+                    font-size: 1.4rem;
+                    line-height: 1.6rem;
+                }
+            }
+            
+            @include responsive(small){
+                display: none;
+            }
+            @include responsive(xsmall){
+                display: none;
+            }
+        }
+        &__end{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 1rem;
+            &__ele{
+                margin: 0 1rem;
+                font-size: 1.6rem;
+                cursor: pointer;
+                @include responsive(medium){
+                    font-size: 1.3rem;
+                }
+                @include responsive(small){
+                    font-size: 1.2rem;
+                }
+                @include responsive(xsmall){
+                    font-size: 1.1rem;
+                }
+                &__span{
+                    display: none;
+                    span:nth-child(1){
+                        display: block;
+                        @include toggleSpans(null,2.2rem,.2rem,null); 
+                        @include responsive(xsmall){
+                            background-color: $dark-salmon2;
+                        }    
+                    }
+                    span:nth-child(2){
+                        display: block;
+                        @include toggleSpans(null,2.2rem,.2rem,.3rem);  
+                        @include responsive(xsmall){
+                            background-color: $dark-salmon2;
+                        }    
+                    }
+                    span:nth-child(3){
+                        display: block;
+                        @include toggleSpans(null,2.2rem,.2rem,.3rem);  
+                        @include responsive(xsmall){
+                            background-color: $dark-salmon2;
+                        }  
+                    }
+                    @include responsive(medium){
+                        display: none;
+                    }
+                    @include responsive(small){
+                        display: block;
+                        
+                    }
+                    @include responsive(xsmall){
+                        display: block;
+                    }
+                    
+                }
+                &__ul{
+                    max-height: 0;
+                    max-width: 0;
+                    overflow: hidden;
+                    transition: all .2s linear;  
+                    &--show{
+                        position: absolute;
+                        width: 100%;
+                        margin-top: 1.2rem;
+                        background-color: $white;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        list-style: none;
+                        padding: 3rem 0;
+                        cursor: auto;
+                        transition: all .2s linear;  
+                        li{
+                            margin: 1rem 0;
+                            font-size: 1.4rem;
+                            a{
+                                text-decoration: none;
+                                color: $grey;
+                            }
+                            &:hover{
+                                a{
+                                color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

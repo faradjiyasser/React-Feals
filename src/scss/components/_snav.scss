@@ -1,0 +1,26 @@
+@use "../abstracts/index" as *;
+.snav{
+    z-index: 1000;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+    display: none;
+    @include responsive(medium){
+        display: none;
+    }
+    @include responsive(small){
+    }
+    @include responsive(xsmall){
+
+    } 
+    &__logo{
+        width: 7rem;
+        img{
+            width: 100%;
+        }
+    }
+}

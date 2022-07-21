@@ -1,0 +1,54 @@
+@use "./breakpoints" as *;
+@mixin position($position, $top, $left, $buttom, $right, $width, $height, $overflow) {
+    position: $position;
+    top: $top;
+    left: $left;
+    buttom: $buttom;
+    right: $right;
+    width: $width;
+    height: $height;
+    overflow: $overflow;
+};
+@mixin align($display, $alignitems, $justifycontent, $height, $width) {
+    display: $display;
+    align-items: $alignitems;
+    justify-content: $justifycontent;
+    height: $height;
+    width: $width;
+};
+@mixin toggleSpans($bg,$width,$height,$margintop){
+    display: block;
+        background: $bg;
+        width: $width;
+        height: $height;
+        margin-top: $margintop;
+        transition: all .3s linear;
+}
+
+@mixin responsive($breakpoint){
+    @if $breakpoint == large {
+        @media (max-width: $lg){
+            @content;
+        }
+    }
+    @if $breakpoint == medium {
+        @media (max-width: $md){
+            @content;
+        }
+    }
+    @if $breakpoint == small {
+        @media (max-width: $sm){
+            @content;
+        }
+    }
+    @if $breakpoint == xsmall {
+        @media (max-width: $xsm){
+            @content;
+        }
+    }
+    @if $breakpoint == xxsmall {
+        @media (max-width: $xxsm){
+            @content;
+        }
+    }
+};

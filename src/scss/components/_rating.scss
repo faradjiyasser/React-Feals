@@ -1,0 +1,21 @@
+@use "../abstracts/index"as*;
+.rating{
+    @include align(flex, center, center, null, 100%);
+    margin: 2rem 0;
+    &__text{
+        text-align: center;
+        p{
+            font-size: 1.8rem;
+            color: $grey;
+        }
+    }
+    &__stars{
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+}
+.rateStar{
+    color:$dark-salmon2 ;
+    
+}

@@ -1,0 +1,123 @@
+@use "../abstracts/index" as *;
+.guarantee{
+    position: relative;
+
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    @include responsive(medium){
+
+    }
+    @include responsive(small){
+        padding: 2rem 0;
+
+    }
+    @include responsive(xsmall){
+        padding: 2rem 0;
+    }
+    &__left{
+        position: relative;
+        width: 50%;
+        height: 100%;
+        clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+        overflow: hidden;
+        img{
+            width: 90%;
+            height: 100%;
+        }
+        @include responsive(medium){
+            clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+        }
+        @include responsive(small){
+            clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+        }
+        @include responsive(xsmall){
+            position: relative;
+            @include align(flex, center, center, null, 100%);
+            top: 5rem;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+            img{
+                width: 100%;
+                clip-path: polygon(0 8%, 100% 0%, 100% 82%, 0% 90%);
+            }
+        }
+    }
+    &__body{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        @include responsive(medium){
+
+        }
+        @include responsive(small){
+    
+        }
+        @include responsive(xsmall){
+            width: 100%;
+            padding-bottom: 4rem;
+        }
+        &__right{
+            width: 100%;
+            @include responsive(medium){
+
+            }
+            @include responsive(small){
+                
+            }
+            @include responsive(xsmall){
+                max-width: 80%;
+                margin-left: 10%;
+                
+            }
+            &__subHeading{
+                margin: 1rem 0;
+                h2{
+                    text-transform: uppercase;
+                    font-size: 1.8rem;
+                    line-height: 3rem;
+                    color: $dark-salmon2;
+
+                }
+            }
+            &__heading{
+                text-transform: capitalize;
+                h1{
+                    font-size: 4rem;
+                    line-height: 5rem;
+                    font-weight: 100;
+                    @include responsive(medium){
+                        font-size: 3rem;
+                        line-height: 4rem;
+                    }
+                    @include responsive(small){
+                        font-size: 2.6rem;
+                        line-height: 3rem;
+                    }
+                    @include responsive(xsmall){
+                        font-size: 2.2rem;
+                        line-height: 2.6rem;
+                    }
+                }
+            }
+            &__content{
+                display: flex;
+                align-items: center;
+                margin-top: 3rem;
+                &__icon{
+                    margin: 0 2rem;
+                }
+                &__text{
+                    h2{
+                        font-size: 2rem;
+                        line-height: 3rem;
+                    }
+                    p{
+                        font-size: 1.8rem;
+                        line-height: 2.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

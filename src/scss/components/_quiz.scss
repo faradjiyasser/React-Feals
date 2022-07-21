@@ -1,0 +1,114 @@
+@use "../abstracts/index"as*;
+.quiz{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    top: -25rem;
+    @include responsive(xsmall){
+        height: 36vh;
+    }
+    &__image{
+        top: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: pixelated;
+        }
+    }
+    &__body{
+        @include align(flex, center, null, null, 100%);
+        @include responsive(xsmall){
+            align-items: center;
+        }
+        &__left{
+            width: 100%;
+            margin-top: 18rem;
+            @include responsive(xsmall){
+                margin-top: 9rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            &__heading{
+                max-width: 46%;
+                color: $white;
+                font-size: 5rem;
+                line-height: 6rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                @include responsive(medium){
+                    font-size:4rem ;
+                    line-height: 5rem;
+                }
+                @include responsive(small){
+                    font-size:3rem ;
+                    line-height: 4rem;
+                }
+                @include responsive(xsmall){
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    max-width: 80%;
+                }
+            }
+            &__paragraph{
+                font-size: 1.8rem;
+                line-height: 2.6rem;
+                font-weight: 100;
+                max-width: 50%;
+                margin-top: 1.6rem;
+                color: $white;
+                @include responsive(medium){
+                    font-size:1.6rem ;
+                    line-height: 2.4rem;
+                }
+                @include responsive(small){
+                    font-size:1.4rem ;
+                    line-height: 2.2rem;
+                    margin-top: 1.4rem;
+                }
+                @include responsive(xsmall){
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                    margin-top: 1rem;
+                    max-width: 80%;
+                    text-align: center;
+                }
+            }
+        }
+        &__right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            @include responsive(medium){
+                
+            }
+            @include responsive(small){
+                
+                margin-top: 1.4rem;
+            }
+            @include responsive(xsmall){
+                
+                margin-top: 1rem;
+            }
+            &__image{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+}

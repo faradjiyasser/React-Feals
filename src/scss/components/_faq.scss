@@ -1,0 +1,113 @@
+@use "../abstracts/index" as *;
+.faq{
+    position: relative;
+    @include align(flex, center, center, null, 100%);
+    margin-top: 4rem;
+    &__span{
+        margin: 1rem 0;
+        h2{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            line-height: 3rem;
+            color: $dark-salmon2;
+
+        }
+    }
+    &__heading{
+        display: flex;
+        justify-content: center;
+        max-width: 70%;
+        text-transform: capitalize;
+        h1{
+            font-size: 4rem;
+            line-height: 5rem;
+            font-weight: 100;
+            text-align: center;
+            @include responsive(medium){
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+            @include responsive(small){
+                font-size: 2.6rem;
+                line-height: 3rem;
+            }
+            @include responsive(xsmall){
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+            }
+        }
+    }
+    &__slider{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        &__body{
+            max-width: 70%;
+            padding: 2rem 0;
+            border-bottom: 1px solid $grey;
+            &__heading{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                padding: 1rem 0;
+                &__text{
+                    h2{
+                        font-size: 1.4rem;
+                        color: $grey;
+                    }
+                    &--selected{
+                        h2{
+                            font-size: 1.4rem;
+                            color: $black;
+                        }
+                    }
+                }
+                
+            }
+            &__paragraph{
+                max-height: 0;
+                overflow: hidden;
+                font-size: 1.5rem;
+                padding-right: 3.5rem;
+                padding-right: 3.5rem;
+                line-height: 2.3rem;
+                &--show{
+                    max-height: 50rem;
+                    padding-bottom: 1.5rem;
+                    padding-top: 1.5rem;
+                    transition: max-height 1s linear;
+                    animation: detailsAnimation .6s ease-in;
+                    p{
+                        font-size: 1.5rem;
+                        color: $grey;
+                        
+                    }
+                    @keyframes detailsAnimation {
+                        from{
+                            opacity: 0;
+                            transform: translateY(-1rem);
+                        }to{
+                            opacity: 1;
+                            transform: translateY(0rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.faqIco{
+    color: $dark-salmon2;
+    opacity: .7;
+    &--show{
+        color: $dark-salmon2;
+        opacity: .7;
+        transform: rotate(90deg);
+        transition:all .6s ease-in;
+    }
+}
